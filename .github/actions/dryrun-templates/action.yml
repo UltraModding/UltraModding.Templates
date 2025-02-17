@@ -6,8 +6,8 @@ runs:
         dotnet new install ./UltraModding.Templates/templates/
       shell: bash
         
-    - name: Test Bare Plugin Template
+    - name: Test Minimal Plugin Template
       if: always()
       run: |
-        dotnet new ultrakillbareplugin --dry-run --diagnostics
+        dotnet new ukplugin-min --dry-run --diagnostics
       shell: bash

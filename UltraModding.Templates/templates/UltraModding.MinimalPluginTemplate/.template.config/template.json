@@ -3,7 +3,7 @@
   "author": "BepInEx, 10_days_till_xmas",
   "classifications": [ "BepInEx", "BepInEx 5", "Plugin", "Ultrakill" ],
   "identity": "UltraModding.MinimalPluginTemplate",
-  "name": "Ultrakill Plugin - Minimal",
+  "name": "Ultrakill Minimal Plugin Template",
   "shortName": "ukplugin-min",
   "tags": {
     "language": "C#",
