@@ -3,7 +3,7 @@ runs:
   steps:
     - name: Install Templates
       run: |
-        dotnet new --install ./UltraModding.Templates/templates/
+        dotnet new install ./UltraModding.Templates/templates/
       shell: bash
         
     - name: Test Bare Plugin Template
