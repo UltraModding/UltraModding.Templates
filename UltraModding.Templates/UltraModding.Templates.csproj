@@ -3,9 +3,9 @@
   <PropertyGroup>
     <PackageType>Template</PackageType>
     <PackageVersion>2.0.0-be.4</PackageVersion>
-    <PackageId>BepInEx.Templates</PackageId>
-    <Title>BepInEx Plugin Templates</Title>
-    <Authors>BepInEx</Authors>
+    <PackageId>UltrakillMod.Templates</PackageId>
+    <Title>Ultrakill Plugin Templates</Title>
+    <Authors>BepInEx, 10_days_till_xmas</Authors>
     <Description>Common plugin templates for BepInEx 5</Description>
     <PackageTags>BepInEx;Plugin;Template</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

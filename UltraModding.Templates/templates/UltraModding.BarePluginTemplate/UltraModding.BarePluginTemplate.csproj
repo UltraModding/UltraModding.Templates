@@ -2,8 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net35</TargetFramework>
-    <AssemblyName>BepInEx5.PluginTemplate</AssemblyName>
+    <AssemblyName>UltraModding.BarePluginTemplate</AssemblyName>
     <Product>My first plugin</Product>
+    <GUID>{guid}</GUID>
     <Version>{version}</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
@@ -12,7 +13,7 @@
       https://nuget.bepinex.dev/v3/index.json;
       https://nuget.samboy.dev/v3/index.json
     </RestoreAdditionalProjectSources>
-    <RootNamespace>BepInEx5.PluginTemplate</RootNamespace>
+    <RootNamespace>UltraModding.BarePluginTemplate</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,16 +1,16 @@
 {
   "$schema": "http://json.schemastore.org/template",
-  "author": "BepInEx",
-  "classifications": [ "BepInEx", "BepInEx 5" , "Plugin" ],
-  "identity": "BepInEx5.Plugin",
-  "name": "BepInEx 5 Plugin",
-  "shortName": "bepinex5plugin",
+  "author": "BepInEx, 10_days_till_xmas",
+  "classifications": [ "BepInEx", "BepInEx 5", "Plugin", "Ultrakill" ],
+  "identity": "UltraModding.BarePlugin",
+  "name": "Ultrakill BepInEx Plugin",
+  "shortName": "ultramodbareplugin",
   "tags": {
     "language": "C#",
     "type": "project"
   },
   "preferNameDirectory": true,
-  "sourceName": "BepInEx5.PluginTemplate",
+  "sourceName": "UltraModding.BarePluginTemplate",
   "symbols": {
     "TargetFramework": {
       "type": "parameter",
