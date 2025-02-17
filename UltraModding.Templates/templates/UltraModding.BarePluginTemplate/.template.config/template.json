@@ -3,8 +3,8 @@
   "author": "BepInEx, 10_days_till_xmas",
   "classifications": [ "BepInEx", "BepInEx 5", "Plugin", "Ultrakill" ],
   "identity": "UltraModding.BarePlugin",
-  "name": "Ultrakill BepInEx Plugin",
-  "shortName": "ultramodbareplugin",
+  "name": "Ultrakill Bare Plugin",
+  "shortName": "ultrakillbareplugin",
   "tags": {
     "language": "C#",
     "type": "project"
