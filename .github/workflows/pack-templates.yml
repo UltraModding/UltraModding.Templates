@@ -1,11 +1,13 @@
-name: pack templates
+name: Pack Templates
 
 on: 
-  repository_dispatch:
-    types: [test-dotnet-sdk-passed]
+  workflow_run:
+    workflows: ["Verify Templates"]
+    types: [completed]
 
 jobs:
   pack-templates:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     name: Pack templates into .nupkg
     runs-on: ubuntu-latest
     steps: 
