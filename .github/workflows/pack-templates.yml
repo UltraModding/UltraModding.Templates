@@ -27,10 +27,11 @@ jobs:
         run: |
           cd ./UltraModding.Templates/ 
           dotnet pack -v n
+          pwd
           
       - name: Upload Template Package Artifact
         uses: actions/upload-artifact@v4.6.0
         with:
-          path: "/UltraModding.Templates/nuget/UltraModding.Templates.1.0.0.nupkg"
+          path: */nuget/UltraModding.Templates.1.0.0.nupkg
           compression-level: 0
     
