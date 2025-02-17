@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>UltraModding.BarePluginTemplate</AssemblyName>
+    <AssemblyName>UltraModding.MinimalPluginTemplate</AssemblyName>
     <Product>My first plugin</Product>
     <GUID>{guid}</GUID>
     <Version>{version}</Version>
@@ -13,7 +13,7 @@
       https://nuget.bepinex.dev/v3/index.json;
       https://nuget.samboy.dev/v3/index.json
     </RestoreAdditionalProjectSources>
-    <RootNamespace>UltraModding.BarePluginTemplate</RootNamespace>
+    <RootNamespace>UltraModding.MinimalPluginTemplate</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,7 +29,7 @@
 
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>{ultrakill_dir}ULTRAKILL_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>{ultrakill_dir}ULTRAKILL_Data/Managed/Assembly-CSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   

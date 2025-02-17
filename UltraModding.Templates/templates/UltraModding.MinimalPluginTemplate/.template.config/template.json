@@ -2,15 +2,15 @@
   "$schema": "http://json.schemastore.org/template",
   "author": "BepInEx, 10_days_till_xmas",
   "classifications": [ "BepInEx", "BepInEx 5", "Plugin", "Ultrakill" ],
-  "identity": "UltraModding.BarePlugin",
-  "name": "Ultrakill Bare Plugin",
-  "shortName": "ultrakillbareplugin",
+  "identity": "UltraModding.MinimalPluginTemplate",
+  "name": "Ultrakill Plugin - Minimal",
+  "shortName": "ukplugin-min",
   "tags": {
     "language": "C#",
     "type": "project"
   },
   "preferNameDirectory": true,
-  "sourceName": "UltraModding.BarePluginTemplate",
+  "sourceName": "UltraModding.MinimalPluginTemplate",
   "symbols": {
     "Name": {
       "type": "parameter",
@@ -33,23 +33,23 @@
       "replaces": "{version}",
       "defaultValue": "1.0.0"
     },
-    "Ultrakill directory": {
+    "UltrakillDirectory": {
       "type": "parameter",
       "description": "Path to Ultrakill directory",
       "datatype": "text",
-      "defaultValue": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ULTRAKILL\\"
+      "defaultValue": "C:/Program Files (x86)/Steam/steamapps/common/ULTRAKILL/"
     },
     "CleanUltrakillDirectory": {
       "type": "generated",
       "generator": "regex",
-      "datatype": "string", 
+      "datatype": "string",
       "replaces": "{ultrakill_dir}",
       "parameters": {
         "source": "Ultrakill Directory",
         "steps": [
           {
             "regex": "[^/\\]$",
-            "replacement": "$&\\"
+            "replacement": "$&/"
           }
         ]
       }

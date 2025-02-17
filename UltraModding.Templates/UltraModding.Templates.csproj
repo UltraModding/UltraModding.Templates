@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>2.0.0-be.4</PackageVersion>
-    <PackageId>UltrakillMod.Templates</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <PackageId>UltraModding.Templates</PackageId>
     <Title>Ultrakill Plugin Templates</Title>
     <Authors>BepInEx, 10_days_till_xmas</Authors>
-    <Description>Common plugin templates for BepInEx 5</Description>
-    <PackageTags>BepInEx;Plugin;Template</PackageTags>
+    <Description>Common plugin templates for Ultrakill</Description>
+    <PackageTags>BepInEx;Plugin;Template;Ultrakill</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageOutputPath>$(SolutionDir)nuget</PackageOutputPath>
@@ -20,6 +20,10 @@
   <ItemGroup>
     <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
     <Compile Remove="**\*" />
+    <Compile Remove="templates\UltraModding.MinimalPluginTemplate\obj\**" />
+    <Content Remove="templates\UltraModding.MinimalPluginTemplate\obj\**" />
+    <EmbeddedResource Remove="templates\UltraModding.MinimalPluginTemplate\obj\**" />
+    <None Remove="templates\UltraModding.MinimalPluginTemplate\obj\**" />
   </ItemGroup>
 
 </Project>
