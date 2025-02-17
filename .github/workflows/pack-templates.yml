@@ -31,6 +31,6 @@ jobs:
       - name: Upload Template Package Artifact
         uses: actions/upload-artifact@v4.6.0
         with:
-          path: /nuget/UltraModding.Templates.1.0.0.nupkg
+          path: "/UltraModding.Templates/nuget/UltraModding.Templates.1.0.0.nupkg"
           compression-level: 0
     
