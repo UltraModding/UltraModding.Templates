@@ -1,6 +1,7 @@
 <Project>
     <Target Name="AddGeneratedFile" BeforeTargets="BeforeCompile;CoreCompile" Inputs="$(MSBuildAllProjects)" Outputs="$(IntermediateOutputPath)GeneratedFile.cs">
         <PropertyGroup>
+            <BepInExPluginGuid Condition="'$(BepInExPluginGuid)' == ''">$(GUID)</BepInExPluginGuid>
             <BepInExPluginGuid Condition="'$(BepInExPluginGuid)' == ''">$(AssemblyName)</BepInExPluginGuid>
             <BepInExPluginName Condition="'$(BepInExPluginName)' == ''">$(Product)</BepInExPluginName>
             <BepInExPluginVersion Condition="'$(BepInExPluginVersion)' == ''">$(Version)</BepInExPluginVersion>
@@ -22,5 +23,6 @@ namespace $(RootNamespace)
             <FileWrites Include="$(GeneratedFilePath)" />
         </ItemGroup>
         <WriteLinesToFile Lines="$(GeneratedText)" File="$(GeneratedFilePath)" WriteOnlyWhenDifferent="true" Overwrite="true" />
+        <Warning Condition="'$(GUID)' == ''" Text="$(AssemblyName).csproj doesnt contain a &lt;GUID&gt; tag"  />
     </Target>
 </Project>
