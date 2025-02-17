@@ -5,9 +5,12 @@ on:
   pull_request:
   
 jobs:
-  test-sdk6:
-    name: Test .NET SDK 6
+  test-dotnet-sdk:
+    name: Test .NET SDK ${{ matrix.dotnet-version }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet-version: [6.x, 7.x, 8.x, 9.x]
     steps:
       - name: Fetch Sources
         uses: actions/checkout@v4
@@ -16,45 +19,8 @@ jobs:
         uses: actions/setup-dotnet@v4
         id: setup-dotnet
         with:
-          dotnet-version: 6.x
-
-      - run: |
-          dotnet new globaljson --sdk-version ${{ steps.setup-dotnet.outputs.dotnet-version }}
-
-      - name: Dry-run Templates
-        uses: ./.github/actions/dryrun-templates
-  
-  test-sdk7:
-    name: Test .NET SDK 7
-    runs-on: ubuntu-latest
-    steps:
-      - name: Fetch Sources
-        uses: actions/checkout@v4
-
-      - name: Setup .NET env
-        uses: actions/setup-dotnet@v4
-        id: setup-dotnet
-        with:
-          dotnet-version: 7.x
-
-      - run: |
-          dotnet new globaljson --sdk-version ${{ steps.setup-dotnet.outputs.dotnet-version }}
-
-      - name: Dry-run Templates
-        uses: ./.github/actions/dryrun-templates
-    
-  test-sdk8:
-    name: Test .NET SDK 8
-    runs-on: ubuntu-latest
-    steps:
-      - name: Fetch Sources
-        uses: actions/checkout@v4
-
-      - name: Setup .NET env
-        uses: actions/setup-dotnet@v4
-        id: setup-dotnet
-        with:
-          dotnet-version: 8.x
+          dotnet-version: ${{ matrix.dotnet-version }}
+          dotnet-quality: ga
 
       - run: |
           dotnet new globaljson --sdk-version ${{ steps.setup-dotnet.outputs.dotnet-version }}
