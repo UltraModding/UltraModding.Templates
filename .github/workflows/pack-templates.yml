@@ -1,0 +1,33 @@
+name: pack templates
+
+on: 
+  repository_dispatch:
+    types: [test-dotnet-sdk-passed]
+
+jobs:
+  pack-templates:
+    name: Pack templates into .nupkg
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Fetch Sources
+        uses: actions/checkout@v4
+        
+      - name: Setup .NET env
+        uses: actions/setup-dotnet@v4
+        id: setup-dotnet
+        with:
+          dotnet-version: 9.x
+          dotnet-quality: ga
+      - run: |
+          dotnet new globaljson --sdk-version ${{ steps.setup-dotnet.outputs.dotnet-version }}
+
+      - name: Pack Templates
+        run: |
+          cd ./UltraModding.Templates/ 
+          dotnet pack -v diag
+          
+      - name: Upload Template Package Artifact
+        uses: actions/upload-artifact@v4.6.0
+        with:
+          compression-level: 0
+    
