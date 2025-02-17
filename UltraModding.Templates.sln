@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BepInEx.Templates", "BepInEx.Templates\BepInEx.Templates.csproj", "{C57C43F6-3BCC-42C5-83C3-48DD6CA51245}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltraModding.Templates", "UltraModding.Templates\UltraModding.Templates.csproj", "{C57C43F6-3BCC-42C5-83C3-48DD6CA51245}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BepInEx.PluginInfoProps", "BepInEx.PluginInfoProps\BepInEx.PluginInfoProps.csproj", "{E05232A2-D0AD-435C-8C16-BC954E43E97B}"
 EndProject
