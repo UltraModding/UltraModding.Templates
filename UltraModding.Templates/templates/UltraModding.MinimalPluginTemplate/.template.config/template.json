@@ -3,6 +3,8 @@
   "author": "BepInEx, 10_days_till_xmas",
   "classifications": [ "BepInEx", "BepInEx 5", "Plugin", "Ultrakill" ],
   "identity": "UltraModding.MinimalPluginTemplate",
+  "groupIdentity": "UltraModding.Templates",
+  "generatorVersions": "1.0.0",
   "name": "Ultrakill Minimal Plugin Template",
   "shortName": "ukplugin-min",
   "tags": {
@@ -45,10 +47,10 @@
       "datatype": "string",
       "replaces": "{ultrakill_dir}",
       "parameters": {
-        "source": "Ultrakill Directory",
+        "source": "UltrakillDirectory",
         "steps": [
           {
-            "regex": "[^/\\]$",
+            "regex": "[^/\\\\]$",
             "replacement": "$&/"
           }
         ]
