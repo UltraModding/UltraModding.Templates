@@ -12,26 +12,19 @@
   "preferNameDirectory": true,
   "sourceName": "UltraModding.BarePluginTemplate",
   "symbols": {
-    "TargetFramework": {
+    "Name": {
       "type": "parameter",
-      "description": "The target framework for the project",
-      "datatype": "text",
-      "defaultValue": "net35",
-      "replaces": "net35"
-    },
-    "Description": {
-      "type": "parameter",
-      "description": "Plugin description",
+      "description": "Plugin name",
       "datatype": "text",
       "replaces": "My first plugin",
       "defaultValue": "My first plugin"
     },
-    "UnityVersion": {
+    "GUID": {
       "type": "parameter",
-      "description": "Unity version to use when developing the plugin",
+      "description": "Unique plugin GUID",
       "datatype": "text",
-      "replaces": "5.6.0",
-      "defaultValue": "5.6.0"
+      "replaces": "{guid}",
+      "defaultValue": "com.yourname.pluginname"
     },
     "Version": {
       "type": "parameter",
@@ -39,6 +32,28 @@
       "datatype": "text",
       "replaces": "{version}",
       "defaultValue": "1.0.0"
+    },
+    "Ultrakill directory": {
+      "type": "parameter",
+      "description": "Path to Ultrakill directory",
+      "datatype": "text",
+      "defaultValue": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ULTRAKILL\\"
+    },
+    "CleanUltrakillDirectory": {
+      "type": "generated",
+      "generator": "regex",
+      "datatype": "string", 
+      "replaces": "{ultrakill_dir}",
+      "parameters": {
+        "source": "Ultrakill Directory",
+        "steps": [
+          {
+            "regex": "[^/\\]$",
+            "replacement": "$&\\"
+          }
+        ]
+      }
     }
+
   }
 }
