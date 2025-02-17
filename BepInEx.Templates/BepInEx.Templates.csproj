@@ -6,7 +6,7 @@
     <PackageId>BepInEx.Templates</PackageId>
     <Title>BepInEx Plugin Templates</Title>
     <Authors>BepInEx</Authors>
-    <Description>Common plugin templates for BepInEx 5 and BepInEx 6</Description>
+    <Description>Common plugin templates for BepInEx 5</Description>
     <PackageTags>BepInEx;Plugin;Template</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <TargetFramework>netstandard2.0</TargetFramework>
