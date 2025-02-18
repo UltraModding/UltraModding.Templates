@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
@@ -24,6 +24,11 @@
     <Content Remove="templates\UltraModding.MinimalPluginTemplate\obj\**" />
     <EmbeddedResource Remove="templates\UltraModding.MinimalPluginTemplate\obj\**" />
     <None Remove="templates\UltraModding.MinimalPluginTemplate\obj\**" />
+    <Content Include="../BepInEx.PluginInfoProps/BepInEx.PluginInfoProps.props" >
+      <Pack>true</Pack>
+      <PackagePath>content/templates/UltraModding.MinimalPluginTemplate/Properties</PackagePath>
+      <Link>templates\UltraModding.MinimalPluginTemplate\Properties\BepInEx.PluginInfoProps.props</Link>
+    </Content>
   </ItemGroup>
-
+  
 </Project>
