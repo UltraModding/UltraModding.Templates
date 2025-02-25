@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <PackageId>UltraModding.Templates</PackageId>
     <Title>Ultrakill Plugin Templates</Title>
     <Authors>BepInEx, 10_days_till_xmas</Authors>
