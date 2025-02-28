@@ -18,7 +18,7 @@
       "type": "parameter",
       "description": "Plugin name",
       "datatype": "text",
-      "replaces": "My first plugin",
+      "replaces": "{plugin_name}",
       "defaultValue": "My first plugin"
     },
     "GUID": {

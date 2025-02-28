@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.1.0</PackageVersion>
     <PackageId>UltraModding.Templates</PackageId>
     <Title>Ultrakill Plugin Templates</Title>
     <Authors>BepInEx, 10_days_till_xmas</Authors>
     <Description>Common plugin templates for Ultrakill</Description>
     <PackageTags>BepInEx;Plugin;Template;Ultrakill</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <PackageOutputPath>$(SolutionDir)nuget</PackageOutputPath>
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>

@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>UltraModding.MinimalPluginTemplate</AssemblyName>
-    <Product>My first plugin</Product>
+    <Product>{plugin_name}</Product>
     <GUID>{guid}</GUID>
     <Version>{version}</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -19,13 +19,15 @@
   <ItemGroup>
     <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
     <PackageReference Include="BepInEx.Core" Version="5.*" />
-    <PackageReference Include="UnityEngine.Modules" Version="2019.4.40" IncludeAssets="compile" />
+    <PackageReference Include="UnityEngine.Modules" Version="2022.3.28" IncludeAssets="compile" />
   </ItemGroup>
   
   <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
   </ItemGroup>
 
+  <Compile Include="\Properties\*.props"/>
+  
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
       <HintPath>{ultrakill_dir}ULTRAKILL_Data/Managed/Assembly-CSharp.dll</HintPath>
