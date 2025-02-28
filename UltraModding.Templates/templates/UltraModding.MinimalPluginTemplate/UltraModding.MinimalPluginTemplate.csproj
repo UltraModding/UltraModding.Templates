@@ -16,6 +16,8 @@
     <RootNamespace>UltraModding.MinimalPluginTemplate</RootNamespace>
   </PropertyGroup>
 
+  <Import Project="Properties\*.props" />
+
   <ItemGroup>
     <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
     <PackageReference Include="BepInEx.Core" Version="5.*" />
