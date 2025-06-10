@@ -1,5 +1,6 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
+using UnityEngine;
 
 namespace UltraModding.MinimalPluginTemplate;
 
