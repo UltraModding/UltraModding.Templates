@@ -18,7 +18,7 @@
       "type": "parameter",
       "description": "Plugin name",
       "datatype": "text",
-      "replaces": "{plugin_name}",
+      "replaces": "{name}",
       "defaultValue": "My first plugin"
     },
     "GUID": {
@@ -37,9 +37,9 @@
     },
     "UltrakillDirectory": {
       "type": "parameter",
-      "description": "Path to Ultrakill directory",
+      "description": "Path to Ultrakill directory (If left blank, will use a provided stripped assembly)",
       "datatype": "text",
-      "defaultValue": "C:/Program Files (x86)/Steam/steamapps/common/ULTRAKILL/"
+      "defaultValue": ""
     },
     "CleanUltrakillDirectory": {
       "type": "generated",

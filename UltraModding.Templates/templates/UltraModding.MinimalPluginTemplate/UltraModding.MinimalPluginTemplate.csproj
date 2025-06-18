@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>UltraModding.MinimalPluginTemplate</AssemblyName>
-    <Product>{plugin_name}</Product>
+    <Product>{name}</Product>
     <GUID>{guid}</GUID>
     <Version>{version}</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -23,17 +23,21 @@
     <PackageReference Include="BepInEx.Core" Version="5.*" />
     <PackageReference Include="UnityEngine.Modules" Version="2022.3.28" IncludeAssets="compile" />
   </ItemGroup>
-  
+
   <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
   </ItemGroup>
 
-  <Compile Include="\Properties\*.props"/>
-  
+  <!--#if (UltrakillDirectory == "")-->
+  <ItemGroup>
+    <PackageReference Include="Ultrakill.GameLibs-Stripped" Version="0.0.16-d" ExcludeAssets="runtime" />
+  </ItemGroup>
+  <!--#else-->
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
       <HintPath>{ultrakill_dir}ULTRAKILL_Data/Managed/Assembly-CSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <!--#endif-->
   
 </Project>
