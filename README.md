@@ -12,11 +12,10 @@ To install, use [dotnet](https://dotnet.microsoft.com/download) tool.
 
 These templates are for **BepInEx 5**:
 
-> For now, the package isn't uploaded to NuGet, so you'll have to download the project as a zip and use the following command from within the solution:
+Firstly, get the latest version of the template package from the [Releases](https://github.com/UltraModding/UltraModding.Templates/releases/tag/v1.2.0) page (for now the nupkg isn't uploaded to nuget), and then run the following command from the directory where the nupkg is downloaded to:
 ```
-dotnet new install ./UltraModding.Templates/templates/
+dotnet new install UltraModding.Templates.1.2.0.nupkg
 ```
-
 This will install the following template:
 
 | Templates                                    | Short Name           | Language   | Tags                                   |
@@ -30,7 +29,7 @@ If you use Rider or Visual Studio 2022, you will be able to select the templates
 
 For example, to create an Ultrakill plugin project:
 ```
-dotnet new ukplugin-min -n MyPluginName
+dotnet new ukplugin-min -o MyPluginName
 ```
 
 This will create a folder name MyPluginName with an example plugin project, and with some dependencies.
@@ -38,7 +37,7 @@ This will create a folder name MyPluginName with an example plugin project, and 
 All templates have additional options. To view them, use `-h` or `--help` switch. For example:
 
 ```
-dotnet new bepinex5plugin --help
+dotnet new ukplugin-min --help
 ```
 
 will show additional options you can specify when creating a project:
@@ -49,7 +48,7 @@ Options:
                             text - Optional
                             Default: My first plugin
 
-  -G|--GUID                 The unique GUID of the plugin
+  -G|--GUID                 Unique plugin GUID
                             text - Optional
                             Default: com.yourname.pluginname
 
@@ -57,9 +56,9 @@ Options:
                             text - Optional
                             Default: 1.0.0
 
-  -U|--UltrakillDirectory   The path to the Ultrakill directory
+  -U|--UltrakillDirectory   Path to Ultrakill directory (If left blank, will use a provided
+                            stripped assembly)
                             text - Optional
-                            Default: C:/Program Files (x86)/Steam/steamapps/common/ULTRAKILL/
 ```
 
 ## Documentation, guides and more
