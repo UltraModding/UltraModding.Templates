@@ -2,26 +2,10 @@
 
 A collection of .NET project templates for Ultrakill plugins using BepInEx 5.
 
-## Installation
+| Templates                         | Short Name      | Language   | Tags                                  |
+|-----------------------------------|-----------------|------------|---------------------------------------|
+| Ultrakill Minimal Plugin Template | `ukplugin-min`  | `[C#]`     | `BepInEx/BepInEx 5/Plugin/Ultrakill`  |
 
-You will need [.NET 6 or newer](https://dotnet.microsoft.com/download) to use the templates.
-
-To install, use [dotnet](https://dotnet.microsoft.com/download) tool.
-
-### Install stable templates
-
-These templates are for **ULTRAKILL Patch 16d or newer**, using **BepInEx 5**.
-
-Firstly, get the latest version of the package from [NuGet](https://www.nuget.org/packages/UltraModding.Templates/)
-via the following command (or installing manually from the package page).
-```
-dotnet new install UltraModding.Templates
-```
-This will install the following template:
-
-| Templates                         | Short Name     | Language | Tags                                 |
-|-----------------------------------|----------------|----------|--------------------------------------|
-| Ultrakill Minimal Plugin Template | `ukplugin-min` | `[C#]`   | `BepInEx/BepInEx 5/Plugin/Ultrakill` |
 
 ## Using a template
 

@@ -3,11 +3,26 @@
   <PropertyGroup>
     <PackageType>Template</PackageType>
     <PackageVersion>1.2.0</PackageVersion>
+    <PackageReleaseNotes>
+      Initial nuget release. Supports minimal plugin scaffolding for UltraModding.
+      - By default, will use the stripped assembly from nuget. This can be overridden if the user provides a path to the Assembly-CSharp.dll of the game
+    </PackageReleaseNotes>
     <PackageId>UltraModding.Templates</PackageId>
     <Title>Ultrakill Plugin Templates</Title>
-    <Authors>BepInEx, 10_days_till_xmas</Authors>
-    <Description>Common plugin templates for Ultrakill</Description>
+    <Authors>BepInEx;10_days_till_xmas</Authors>
+    <Description>Plugin templates for Ultrakill using BepInEx.</Description>
+    <Summary>Plugin templates for Ultrakill using BepInEx.</Summary>
     <PackageTags>BepInEx;Plugin;Template;Ultrakill</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/UltraModding/UltraModding.Templates</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/UltraModding/UltraModding.Templates</PackageProjectUrl>
+    <Copyright>Original (c) 2021 BepInEx; Modified (c) 2025 UltraModding Contributors</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+  
+  <PropertyGroup>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <TargetFramework>netstandard2.1</TargetFramework>
     <PackageOutputPath>$(SolutionDir)nuget</PackageOutputPath>
@@ -16,7 +31,11 @@
     <ContentTargetFolders>content</ContentTargetFolders>
     <NoWarn>$(NoWarn);NU5128</NoWarn>
   </PropertyGroup>
-
+  
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+  
   <ItemGroup>
     <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
     <Compile Remove="**\*" />
