@@ -1,20 +1,19 @@
 <Project>
     <Target Name="AddGeneratedFile" BeforeTargets="BeforeCompile;CoreCompile" Inputs="$(MSBuildAllProjects)" Outputs="$(IntermediateOutputPath)GeneratedFile.cs">
         <PropertyGroup>
-            <BepInExPluginGuid Condition="'$(BepInExPluginGuid)' == ''">$(GUID)</BepInExPluginGuid>
-            <BepInExPluginGuid Condition="'$(BepInExPluginGuid)' == ''">$(AssemblyName)</BepInExPluginGuid>
-            <BepInExPluginName Condition="'$(BepInExPluginName)' == ''">$(Product)</BepInExPluginName>
-            <BepInExPluginVersion Condition="'$(BepInExPluginVersion)' == ''">$(Version)</BepInExPluginVersion>
+            <PluginGuid Condition="'$(PluginGuid)' == ''">$(GUID)</PluginGuid>
+            <PluginName Condition="'$(PluginName)' == ''">$(Product)</PluginName>
+            <PluginVersion Condition="'$(PluginVersion)' == ''">$(Version)</PluginVersion>
             <GeneratedText><![CDATA[
-namespace $(RootNamespace)
+namespace $(RootNamespace)%3B
+
+internal static class MyPluginInfo
 {
-    internal static class MyPluginInfo
-    {
-        public const string PLUGIN_GUID = "$(BepInExPluginGuid)"%3B
-        public const string PLUGIN_NAME = "$(BepInExPluginName)"%3B
-        public const string PLUGIN_VERSION = "$(BepInExPluginVersion)"%3B
-    }
+    public const string PLUGIN_GUID = "$(PluginGuid)"%3B
+    public const string PLUGIN_NAME = "$(PluginName)"%3B
+    public const string PLUGIN_VERSION = "$(PluginVersion)"%3B
 }
+
       ]]></GeneratedText>
             <GeneratedFilePath>$(IntermediateOutputPath)MyPluginInfo.cs</GeneratedFilePath>
         </PropertyGroup>

@@ -7,7 +7,7 @@ Generates `MyPluginInfo.cs` based on csproj tags.
 Define the following properties in your `csproj`:
 
 ```xml
-<AssemblyName>Example.Plugin</AssemblyName>
+<GUID>Example.Plugin</GUID>
 <Product>My first plugin</Product>
 <Version>1.0.0</Version>
 ```
@@ -15,8 +15,6 @@ Define the following properties in your `csproj`:
 this will generate the following class:
 
 ```cs
-using System;
-
 internal static class MyPluginInfo
 {
     public const string PLUGIN_GUID = "Example.Plugin";
