@@ -16,18 +16,13 @@
     <RootNamespace>UltraModding.MinimalPluginTemplate</RootNamespace>
   </PropertyGroup>
 
-  <Import Project="Properties\*.props" />
-
   <ItemGroup>
     <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
     <PackageReference Include="BepInEx.Core" Version="5.*" />
+    <PackageReference Include="UltraModding.PluginInfoProps" Version="3.0.0" />
     <PackageReference Include="UnityEngine.Modules" Version="2022.3.28" IncludeAssets="compile" />
   </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
-  </ItemGroup>
-
+  
   <!--#if (UltrakillDirectory == "")-->
   <ItemGroup>
     <PackageReference Include="Ultrakill.GameLibs-Stripped" Version="0.0.16-d" ExcludeAssets="runtime" />
