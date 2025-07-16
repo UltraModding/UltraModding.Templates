@@ -1,4 +1,7 @@
 ﻿using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using UltraModding.Templates.Tests.Helpers;
 
 namespace UltraModding.Templates.Tests;
 
@@ -36,7 +39,7 @@ public sealed partial class ProjectTemplateTests
         var installProcess = Process.Start(new ProcessStartInfo
         {
             FileName = "dotnet",
-            Arguments = $"new --install \"{nupkgPath}\" {_customHiveArg}",
+            Arguments = $"new install \"{nupkgPath}\" {_customHiveArg}",
             RedirectStandardOutput = true,
             RedirectStandardError = true,
             UseShellExecute = false
@@ -74,8 +77,9 @@ public sealed partial class ProjectTemplateTests
         process.WaitForExit();
         if (process.ExitCode != 0)
         {
+            var standardOutput = process.StandardOutput.ReadToEnd();
             var errorOutput = process.StandardError.ReadToEnd();
-            Assert.Fail($"Error generating template: {errorOutput}");
+            Assert.Fail($"Error generating template: {standardOutput}\n{errorOutput}");
             return;
         }
         Output.WriteLine("Project generated successfully");

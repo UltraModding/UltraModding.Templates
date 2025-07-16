@@ -1,6 +1,9 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
+using System.IO;
+using System.Threading.Tasks;
 using System.Xml;
-using Xunit.Abstractions;
+using UltraModding.Templates.Tests.Helpers;
 
 namespace UltraModding.Templates.Tests;
 
@@ -9,7 +12,7 @@ public sealed partial class ProjectTemplateTests(ITestOutputHelper output) : IDi
     private readonly TempDir _hivePath = new("dotnet-hive-" + Guid.NewGuid()) {Output = output};
     private string _customHiveArg => $"--debug:custom-hive \"{_hivePath}\"";
     private ITestOutputHelper Output => output;
-    public static TheoryData<string> TemplateNames => ["ukplugin-min"];
+    public static TheoryData<string> TemplateNames => ["ukplugin-min", "ukplugin-full"];
 
     [Theory]
     [MemberData(nameof(TemplateNames))]
@@ -23,9 +26,9 @@ public sealed partial class ProjectTemplateTests(ITestOutputHelper output) : IDi
         Assert.True(File.Exists(projectPath), "Project file was not created.");
     }
 
-    [Theory] // Maybe this should be a Fact once other templates exist. Or refactor if necessary
+    [Theory]
     [MemberData(nameof(TemplateNames))]
-    public void Template_Replaces_Parameters_In_Csproj(string templateName)
+    public void Template_Replaces_Common_Parameters_In_Csproj(string templateName)
     {
         using TempDir tempDir = new();
         
@@ -113,4 +116,64 @@ public sealed partial class ProjectTemplateTests(ITestOutputHelper output) : IDi
         }
         Output.WriteLine("Project built successfully");
     }
+
+    [Fact]
+    public async Task FullProjectTemplate_Generated_Project_Builds()
+    {
+        const string templateName = "ukplugin-full";
+        const string pluginName = "TestPlugin_BuildTest";
+        const string assemblyName = "TestPluginAssembly_BuildTest";
+        const string guid = "com.example.testpluginbuildtest";
+        const string version = "2.3.4";
+        const string ultrakillDirectory = "C:/Program Files (x86)/Steam/steamapps/common/ULTRAKILL/";
+        const string pluginsDirectory = $"{ultrakillDirectory}BepInEx/plugins/";
+        Assert.SkipUnless(Directory.Exists(pluginsDirectory),
+            $"Ultrakill plugins directory '{pluginsDirectory}' does not exist. Skipping test.");
+        var cancellationToken = TestContext.Current.CancellationToken;
+        using TempDir tempDir = new();
+        
+        GenerateProjectFromTemplate(
+            workingDirectory: tempDir,
+            templateName: templateName,
+            outputName: assemblyName,
+            $"--Name \"{pluginName}\"",
+            $"--GUID \"{guid}\"",
+            $"--Version \"{version}\"",
+            $"--UltrakillDirectory \"{ultrakillDirectory}\"");
+
+        var buildProcess = new Process
+        {
+            StartInfo = new ProcessStartInfo
+            {
+                FileName = "dotnet",
+                Arguments = "build -c Release",
+                WorkingDirectory = Path.Combine(tempDir, assemblyName),
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                UseShellExecute = false
+            }
+        };
+        Assert.NotNull(buildProcess);
+        #if DEBUG
+        buildProcess.OutputDataReceived += (_, args) 
+            => Output.WriteLine($"StdOut: {args.Data}");
+        buildProcess.ErrorDataReceived += (_, args)
+            => Output.WriteLine($"StdErr: {args.Data}");
+        #endif
+        buildProcess.Start();
+        buildProcess.BeginOutputReadLine();
+        buildProcess.BeginErrorReadLine();
+        
+        
+        await buildProcess.WaitForExitAsync(cancellationToken);
+        
+        if (buildProcess.ExitCode != 0)
+        {
+            var errorTask = buildProcess.StandardError.ReadToEndAsync(cancellationToken);
+            Assert.Fail($"Error building project: {await errorTask}");
+            return;
+        }
+        Output.WriteLine("Project built successfully");
+    }
+    
 }

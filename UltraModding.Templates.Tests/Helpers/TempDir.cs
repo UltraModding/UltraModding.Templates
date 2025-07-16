@@ -1,6 +1,7 @@
-﻿using Xunit.Abstractions;
+﻿using System;
+using System.IO;
 
-namespace UltraModding.Templates.Tests;
+namespace UltraModding.Templates.Tests.Helpers;
 /// <summary>
 /// Temporary directory class for creating and managing a temporary directory.
 /// </summary>

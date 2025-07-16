@@ -2,7 +2,7 @@
 
   <PropertyGroup Label="Package Identity">
     <PackageId>UltraModding.Templates</PackageId>
-    <PackageVersion>1.2.0</PackageVersion>
+    <PackageVersion>2.0.0</PackageVersion>
     <Authors>BepInEx;10_days_till_xmas</Authors>
     <PackageTags>BepInEx;Plugin;Template;Ultrakill</PackageTags>
     <PackageType>Template</PackageType>
@@ -13,8 +13,7 @@
     <Summary>Plugin templates for Ultrakill using BepInEx.</Summary>
     <Description>Plugin templates for Ultrakill using BepInEx.</Description>
     <PackageReleaseNotes>
-      Initial nuget release. Supports minimal plugin scaffolding for UltraModding.
-      - By default, will use the stripped assembly from nuget. This can be overridden if the user provides a path to the Assembly-CSharp.dll of the game
+      Added Full Plugin Template - includes launch profiles, with output copying to the Ultrakill directory.
     </PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
