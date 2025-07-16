@@ -1,8 +1,6 @@
 <Project>
   <Target Name="AddGeneratedFile" BeforeTargets="BeforeCompile;CoreCompile" 
           Inputs="$(MSBuildAllProjects)" Outputs="$(IntermediateOutputPath)GeneratedFile.cs">
-    <Warning Text="This package is deprecated. Reference the UltraModding.PluginInfoGenerator package instead" />
-    
     <PropertyGroup>
       <PluginGuid Condition="'$(PluginGuid)' == ''">$(GUID)</PluginGuid>
       <PluginName Condition="'$(PluginName)' == ''">$(Product)</PluginName>
