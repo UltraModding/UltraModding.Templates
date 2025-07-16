@@ -2,16 +2,18 @@
   
   <PropertyGroup Label="Package Identity">
     <PackageId>UltraModding.PluginInfoProps</PackageId>
-    <Version>3.0.0</Version>
+    <Version>3.1.0</Version>
     <Authors>BepInEx;10_days_till_xmas</Authors>
     <PackageTags>BepInEx;Ultrakill;Build;Props</PackageTags>
   </PropertyGroup>
   
   <PropertyGroup Label="Package Description">
-    <Description>Helper build target that generates a MyPluginInfo class based on assembly metadata.</Description>
+    <Description>
+      [Deprecated: Use UltraModding.PluginInfoGenerator instead]
+      Helper build target that generates a MyPluginInfo class based on assembly metadata.
+    </Description>
     <PackageReleaseNotes>
-      Initial nuget release. Generates a MyPluginInfo class based on assembly metadata.
-      - Use the GUID, Product, and Version properties to set the values.
+      Mark package as deprecated and recommend using UltraModding.PluginInfoGenerator instead.
     </PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -19,7 +21,7 @@
   </PropertyGroup>
 
   <PropertyGroup Label="Repository Metadata">
-    <PackageProjectUrl>https://github.com/UltraModding/UltraModding.Templates/tree/master/UltraModding.PluginInfoProps</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/UltraModding/UltraModding.Templates/tree/rename-package/UltraModding.PluginInfoProps</PackageProjectUrl>
     <RepositoryUrl>https://github.com/UltraModding/UltraModding.Templates</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
