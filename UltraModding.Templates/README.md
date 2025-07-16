@@ -2,14 +2,15 @@
 
 A collection of .NET project templates for Ultrakill plugins using BepInEx 5.
 
-| Templates                         | Short Name      | Language   | Tags                                  |
-|-----------------------------------|-----------------|------------|---------------------------------------|
-| Ultrakill Minimal Plugin Template | `ukplugin-min`  | `[C#]`     | `BepInEx/BepInEx 5/Plugin/Ultrakill`  |
+| Templates                         | Short Name      | Language | Tags                                 |
+|-----------------------------------|-----------------|----------|--------------------------------------|
+| Ultrakill Full Plugin Template    | `ukplugin-full` | `[C#]`   | `BepInEx/BepInEx 5/Plugin/Ultrakill` |
+| Ultrakill Minimal Plugin Template | `ukplugin-min`  | `[C#]`   | `BepInEx/BepInEx 5/Plugin/Ultrakill` |
 
 
 ## Using a template
 
-To use a template, you can use the `dotnet new` command.  
+To use a template, use the `dotnet new` command.  
 If you use Rider or Visual Studio 2022, you will be able to select the templates when creating a new solution.
 
 For example, to create an Ultrakill plugin project:

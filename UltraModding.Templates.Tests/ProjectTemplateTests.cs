@@ -127,8 +127,10 @@ public sealed partial class ProjectTemplateTests(ITestOutputHelper output) : IDi
         const string version = "2.3.4";
         const string ultrakillDirectory = "C:/Program Files (x86)/Steam/steamapps/common/ULTRAKILL/";
         const string pluginsDirectory = $"{ultrakillDirectory}BepInEx/plugins/";
+        
         Assert.SkipUnless(Directory.Exists(pluginsDirectory),
             $"Ultrakill plugins directory '{pluginsDirectory}' does not exist. Skipping test.");
+        
         var cancellationToken = TestContext.Current.CancellationToken;
         using TempDir tempDir = new();
         

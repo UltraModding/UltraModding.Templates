@@ -2,7 +2,7 @@
 
   <PropertyGroup Label="Package Identity">
     <PackageId>UltraModding.Templates</PackageId>
-    <PackageVersion>2.0.0</PackageVersion>
+    <PackageVersion>2.0.1</PackageVersion>
     <Authors>BepInEx;10_days_till_xmas</Authors>
     <PackageTags>BepInEx;Plugin;Template;Ultrakill</PackageTags>
     <PackageType>Template</PackageType>

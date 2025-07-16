@@ -19,9 +19,10 @@ dotnet new install UltraModding.Templates
 ```
 This will install the following template:
 
-| Templates                         | Short Name     | Language | Tags                                 |
-|-----------------------------------|----------------|----------|--------------------------------------|
-| Ultrakill Minimal Plugin Template | `ukplugin-min` | `[C#]`   | `BepInEx/BepInEx 5/Plugin/Ultrakill` |
+| Templates                         | Short Name      | Language | Tags                                 |
+|-----------------------------------|-----------------|----------|--------------------------------------|
+| Ultrakill Full Plugin Template    | `ukplugin-full` | `[C#]`   | `BepInEx/BepInEx 5/Plugin/Ultrakill` |
+| Ultrakill Minimal Plugin Template | `ukplugin-min`  | `[C#]`   | `BepInEx/BepInEx 5/Plugin/Ultrakill` |
 
 ## Using a template
 
